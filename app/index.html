@@ -21,23 +21,22 @@
         </div>
         <ul id="grocery-list"></ul>
         <div data-role="modalview" id="add" style="width: 90%" data-model="addView">
-  <div data-role="header">
-      <div data-role="navbar">
-          <span>Add Grocery</span>
-      </div>
-  </div>
-
-  <ul data-role="listview" data-style="inset">
-      <li>
-          <label>
-              Grocery:<input type="text" data-bind="value: grocery">
-          </label>
-      </li>
-  </ul>
-
-  <button data-bind="click: add" class="add-button" data-role="button">Add</button>
-  <button data-bind="click: close" class="close-button" data-role="button">Close</button>
-</div>
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span>Add Grocery</span>
+                </div>
+            </div>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Grocery:
+                        <input type="text" data-bind="value: grocery">
+                    </label>
+                </li>
+            </ul>
+            <button data-bind="click: add" class="add-button" data-role="button">Add</button>
+            <button data-bind="click: close" class="close-button" data-role="button">Close</button>
+        </div>
     </div>
 </body>
 
