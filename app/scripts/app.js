@@ -1,5 +1,5 @@
 (function () {
-    var apiKey = "D1iXkmIDhv4WEhC7";
+    var apiKey = "YOUR_API_KEY";
     var scheme = 'https';
 
     var el = new Everlive({

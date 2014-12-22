@@ -14,6 +14,82 @@
 </head>
 
 <body>
+    <div data-role="view" id="login" data-title="Login" data-model="loginView">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+        </div>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Username:
+                        <input type="text" name="username" data-bind="value: username">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Password:
+                        <input type="password" name="password" data-bind="value: password">
+                    </label>
+                </li>
+                <li>
+                    <button style="width: 100%" data-role="button" data-bind="click: submit">Login</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div data-role="view" id="register" data-title="Register" data-model="registerView">
+        <div data-role="navbar">
+            <a href="#login" data-align="left" data-role="button">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Email Address:
+                        <input type="email" name="email" data-bind="value: email">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Username:
+                        <input type="text" name="username" data-bind="value: username">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Password:
+                        <input type="password" name="password" data-bind="value: password">
+                    </label>
+                </li>
+                <li>
+                    <button style="width: 100%" data-role="button" data-bind="click: submit">Register</button>
+                </li>
+            </ul>
+        </form>
+        <a href="#register">Create an account</a>
+        <a href="#password">Forgot password?</a>
+    </div>
+    <div data-role="view" id="password" data-title="Reset Password" data-model="passwordView">
+        <div data-role="navbar">
+            <a href="#login" data-align="left" data-role="button">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Email Address:
+                        <input type="email" name="email" data-bind="value: email">
+                    </label>
+                </li>
+                <li>
+                    <button style="width: 100%" data-role="button" data-bind="click: submit">Reset</button>
+                </li>
+            </ul>
+        </form>
+    </div>
     <div data-role="view" id="list" data-title="Grocery List">
         <div data-role="navbar">
             <span data-role="view-title"></span>
