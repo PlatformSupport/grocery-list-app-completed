@@ -1,5 +1,5 @@
 (function () {
-    var apiKey = "YOUR_API_KEY";
+    var apiKey = "D1iXkmIDhv4WEhC7";
     var scheme = 'https';
 
     var el = new Everlive({
@@ -17,13 +17,14 @@
                 navigator.notification.alert("Password is required.");
                 return;
             }
-            
+
             el.Users.login(this.username, this.password,
                 function (data) {
                     window.location.href = "#list";
-               
-                    initListView();                 
-                }, function () {
+
+                    initListView();
+                },
+                function () {
                     navigator.notification.alert("Unfortunately we could not find your account.");
                 });
         }
@@ -109,14 +110,14 @@
         }
     });
 
+    var groceryDataSource = new kendo.data.DataSource({
+        type: "everlive",
+        transport: {
+            typeName: "Groceries"
+        }
+    });
+
     function initListView() {
-        var groceryDataSource = new kendo.data.DataSource({
-            type: "everlive",
-            transport: {
-                typeName: "Groceries"
-            }
-        });
-        
         $("#grocery-list").kendoMobileListView({
             dataSource: groceryDataSource,
             template: "#: Name #"
@@ -130,6 +131,7 @@
         });
 
         navigator.splashscreen.hide();
+        initListView();
     }
 
     document.addEventListener("deviceready", initialize);
