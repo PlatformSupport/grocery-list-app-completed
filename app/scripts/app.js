@@ -76,22 +76,11 @@
             });
         }
     });
+    // TODO - add a view about this
+   
 
     window.listView = kendo.observable({
-        logout: function (event) {
-            // Prevent going to the login page until the login call processes.
-            event.preventDefault();
-            el.Users.logout(function () {
-                this.loginView.set("username", "");
-                this.loginView.set("password", "");
-                window.location.href = "#login";
-            }, function () {
-                navigator.notification.alert("Unfortunately an error occurred logging out of your account.");
-            });
-        }
-    });
-
-    window.addView = kendo.observable({
+        grocery: "",
         add: function () {
             if (this.grocery.trim() === "") {
                 navigator.notification.alert("Please provide a grocery.");
@@ -103,10 +92,21 @@
             });
             groceryDataSource.one("sync", this.close);
             groceryDataSource.sync();
+            this.set("grocery", "");
         },
         close: function () {
             $("#add").data("kendoMobileModalView").close();
-            this.grocery = "";
+        },
+        logout: function (event) {
+            // Prevent going to the login page until the login call processes.
+            event.preventDefault();
+            el.Users.logout(function () {
+                this.loginView.set("username", "");
+                this.loginView.set("password", "");
+                window.location.href = "#login";
+            }, function () {
+                navigator.notification.alert("Unfortunately an error occurred logging out of your account.");
+            });
         }
     });
 
@@ -131,7 +131,7 @@
         });
 
         navigator.splashscreen.hide();
-        initListView();
+     //   initListView();
     }
 
     document.addEventListener("deviceready", initialize);

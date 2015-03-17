@@ -92,13 +92,14 @@
             </ul>
         </form>
     </div>
-    <div data-role="view" id="list" data-title="Grocery List">
+    <div data-role="view" id="list" data-title="Grocery List" data-model="listView">
         <div data-role="navbar">
+            <a data-role="button" href="#login" data-align="left" data-bind="click: logout">Logout</a>
             <span data-role="view-title"></span>
             <a data-role="button" data-align="right" data-rel="modalview" href="#add">Add</a>
         </div>
         <ul id="grocery-list"></ul>
-        <div data-role="modalview" id="add" style="width: 90%" data-model="addView">
+        <div data-role="modalview" id="add" style="width: 90%">
             <div data-role="header">
                 <div data-role="navbar">
                     <span>Add Grocery</span>
