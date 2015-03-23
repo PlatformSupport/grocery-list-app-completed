@@ -90,7 +90,7 @@
             groceryDataSource.add({
                 Name: this.grocery
             });
-            groceryDataSource.one("sync", this.close);
+            groceryDataSource.one("sync", this.close());
             groceryDataSource.sync();
             this.set("grocery", "");
         },
